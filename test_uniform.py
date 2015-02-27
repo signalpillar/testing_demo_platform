@@ -18,7 +18,7 @@ def test_random_uniform():
     # given
     start = 0
     stop = 1
-    partitions = 10
+    partitions = 20
     iterations = 10000
 
     expected_density = 1./partitions
@@ -32,7 +32,7 @@ def test_random_uniform():
     # verify
     for bucket_idx, counts in counter.viewitems():
         density = float(counts)/iterations
-        if abs(density - expected_density) > expected_density/partitions:
-            raise "Strange Density", (
-                "Error happens for {!r} with density {!r}. Counter: {!r}"
+        if abs(density - expected_density) > expected_density/10:
+            raise AssertionError(
+                "Strange Densityfor {!r} with density {!r}. Counter: {!r}"
                 .format(bucket_idx, density, counts))
