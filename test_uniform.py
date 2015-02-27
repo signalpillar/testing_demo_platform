@@ -34,5 +34,5 @@ def test_random_uniform():
         density = float(counts)/iterations
         if abs(density - expected_density) > expected_density/10:
             raise AssertionError(
-                "Strange Densityfor {!r} with density {!r}. Counter: {!r}"
+                "Strange Density for {!r} with density {!r}. Counter: {!r}"
                 .format(bucket_idx, density, counts))
